@@ -1,0 +1,59 @@
+<div class="col d-flex justify-content-center">
+    <div class="card" style="width: 57rem;">
+        <div class="card-body">
+            <form [formGroup]="myFormGroup" #myForm="ngForm">
+                <ng-container *ngFor="let item of jsonData">
+                    <legend>{{item.name}}</legend>
+                    <ng-container *ngFor="let subitem of item.group">
+                        <h4>{{subitem.name}}</h4>
+                        <ng-container *ngFor="let element of subitem.parameters;let j = index">
+
+                            <div [ngSwitch]="element.field_type">
+                                <div *ngSwitchCase="'input'">
+                                    <div class="mb-3">
+                                        <label for="customInput{{j}}" class="form-label">{{element.name}}</label>
+                                        <input class="form-control" type="text" id="customInput{{j}}"
+                                            [formControlName]="element.key">
+                                    </div>
+                                </div>
+                                <div *ngSwitchCase="'slider'">
+                                    <div class="mb-3">
+                                        <label for="customRange{{j}}" class="form-label">{{element.name}}</label>
+                                        <!-- <input type="range" class="form-range" id="customRange{{j}}"
+                                            [formControlName]="element.key"> -->
+                                        <ngx-slider [formControlName]="element.key" id="customRange{{j}}"
+                                            [options]="options"></ngx-slider>
+                                    </div>
+                                </div>
+                                <div *ngSwitchCase="'radio_buttons'">
+                                    <h4>{{element.name}}</h4>
+                                    <ng-container *ngFor="let element1 of element.options;let i = index">
+                                        <!-- <div class="form-check"> -->
+                                        <div class="mb-3">
+                                            <input class="form-check-input" type="radio" [formControlName]="element.key"
+                                                id="radioBtn{{i}}" [value]="element1.value">
+                                            <label class="form-check-label" for="radioBtn{{i}}">
+                                                {{element1.label}}
+                                            </label>
+                                        </div>
+                                        <!-- </div> -->
+                                    </ng-container>
+                                </div>
+                                <div *ngSwitchDefault>
+                                    <h4>Default</h4>
+                                </div>
+                            </div>
+                            <br><br>
+
+                        </ng-container>
+
+                    </ng-container>
+                </ng-container>
+                <div class="btn-container">
+                    <button type="button" class="btn btn-primary" (click)="onSubmit($event)">Submit</button>
+                    <button type="button" class="btn btn-secondary ml-2" disabled>Calculate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

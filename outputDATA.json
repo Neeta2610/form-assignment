@@ -1,0 +1,70 @@
+{
+    "section": [
+        {
+            "name": "Leadership",
+            "group": [
+                {
+                    "name": "Founder / CEO Assessment",
+                    "parameters": [
+                        {
+                            "key": "value_congruence",
+                            "value": "5"
+                        },
+                        {
+                            "key": "ability_to_retain_talent",
+                            "value": 6
+                        },
+                        {
+                            "key": "clarity_of_thought",
+                            "value": "yes"
+                        },
+                        {
+                            "key": "execution_capability",
+                            "value": 4
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Exit",
+            "group": [
+                {
+                    "name": "IPO",
+                    "parameters": [
+                        {
+                            "key": "attrractiveness_public_market",
+                            "value": 8
+                        },
+                        {
+                            "key": "estimated_marketcap",
+                            "value": "9"
+                        }
+                    ]
+                },
+                {
+                    "name": "Strategic Sale",
+                    "parameters": [
+                        {
+                            "key": "founder_keeness",
+                            "value": 8
+                        },
+                        {
+                            "key": "easily_identifiable",
+                            "value": 10
+                        }
+                    ]
+                },
+                {
+                    "name": "Financial Sponsor",
+                    "parameters": [
+                        {
+                            "key": "business_likelihood",
+                            "value": 5
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
